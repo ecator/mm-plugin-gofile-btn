@@ -1,11 +1,13 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
+	"errors"
 	"sync"
 
+	"github.com/mattermost/mattermost-server/v5/model"
 	"github.com/mattermost/mattermost-server/v5/plugin"
+
+	"github.com/gorilla/mux"
 )
 
 // Plugin implements the interface expected by the Mattermost server to communicate between the server and plugin processes.
@@ -18,11 +20,18 @@ type Plugin struct {
 	// configuration is the active plugin configuration. Consult getConfiguration and
 	// setConfiguration for usage.
 	configuration *configuration
+	ServerConfig  *model.Config
+
+	router *mux.Router
 }
 
-// ServeHTTP demonstrates a plugin that handles HTTP requests by greeting the world.
-func (p *Plugin) ServeHTTP(c *plugin.Context, w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Hello, world!")
-}
+// OnActivate ensures a configuration is set and initializes the API
+func (p *Plugin) OnActivate() error {
+	if p.ServerConfig.ServiceSettings.SiteURL == nil {
+		return errors.New("siteURL is not set. Please set a siteURL and restart the plugin")
+	}
 
-// See https://developers.mattermost.com/extend/plugins/server/reference/
+	p.router = p.InitAPI()
+
+	return nil
+}

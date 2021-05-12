@@ -9,7 +9,6 @@ let mode = 'production';
 let devtool = '';
 if (NPM_TARGET === 'debug' || NPM_TARGET === 'debug:watch') {
     mode = 'development';
-    devtool = 'source-map';
 }
 
 const plugins = [];
@@ -36,7 +35,7 @@ if (NPM_TARGET === 'build:watch' || NPM_TARGET === 'debug:watch') {
 
 module.exports = {
     entry: [
-        './src/index.tsx',
+        './src/index.jsx',
     ],
     resolve: {
         modules: [
@@ -77,15 +76,21 @@ module.exports = {
                     },
                 ],
             },
+            {
+                test: /\.(png|jpg|gif)$/i,
+                use: [
+                  {
+                    loader: 'url-loader',
+                    options: {
+                      limit: 1024*1024,
+                    },
+                  },
+                ],
+              },
         ],
     },
     externals: {
         react: 'React',
-        redux: 'Redux',
-        'react-redux': 'ReactRedux',
-        'prop-types': 'PropTypes',
-        'react-bootstrap': 'ReactBootstrap',
-        'react-router-dom': 'ReactRouterDom',
     },
     output: {
         devtoolNamespace: PLUGIN_ID,
@@ -93,7 +98,6 @@ module.exports = {
         publicPath: '/',
         filename: 'main.js',
     },
-    devtool,
     mode,
     plugins,
 };

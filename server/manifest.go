@@ -12,9 +12,13 @@ var manifest *model.Manifest
 
 const manifestStr = `
 {
-  "id": "com.mattermost.plugin-starter-template",
-  "name": "Plugin Starter Template",
-  "description": "This plugin serves as a starting point for writing a Mattermost plugin.",
+  "id": "mm-plugin-gofile-btn",
+  "name": "Gofile Button",
+  "description": "在输入框旁边增加Gofile的链接按钮",
+  "homepage_url": "https://github.com/ecator/mm-plugin-gofile-btn",
+  "support_url": "https://github.com/ecator/mm-plugin-gofile-btn/issues",
+  "release_notes_url": "https://github.com/ecator/mm-plugin-gofile-btn/releases",
+  "icon_path": "assets/dog.png",
   "version": "0.1.0",
   "min_server_version": "5.12.0",
   "server": {
@@ -29,9 +33,18 @@ const manifestStr = `
     "bundle_path": "webapp/dist/main.js"
   },
   "settings_schema": {
-    "header": "",
+    "header": "Gofile button",
     "footer": "",
-    "settings": []
+    "settings": [
+      {
+        "key": "url",
+        "display_name": "The url of Gofile",
+        "type": "text",
+        "help_text": "The url that will be movied",
+        "placeholder": "http://gofile.example.com",
+        "default": null
+      }
+    ]
   }
 }
 `

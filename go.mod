@@ -1,8 +1,9 @@
-module github.com/mattermost/mattermost-plugin-starter-template
+module github.com/ecator/mm-plugin-gofile-btn
 
-go 1.12
+go 1.16
 
 require (
+	github.com/gorilla/mux v1.7.4
 	github.com/kr/text v0.2.0 // indirect
 	github.com/mattermost/mattermost-server/v5 v5.26.2
 	github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e // indirect

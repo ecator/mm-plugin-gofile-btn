@@ -8,3 +8,6 @@ dist/
 
 # Jetbrains
 .idea/
+
+*.code-workspace
+*.env
