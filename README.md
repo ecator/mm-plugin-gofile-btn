@@ -1,3 +1,3 @@
 # Gofile button for Mattermost plugin
 
- 在输入框旁边增加[Gofile](https://github.com/ecator/gofile)的链接按钮 
+ 在文件上传按钮旁边增加[Gofile](https://github.com/ecator/gofile)的链接按钮 
