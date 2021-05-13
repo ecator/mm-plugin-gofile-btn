@@ -13,13 +13,13 @@ var manifest *model.Manifest
 const manifestStr = `
 {
   "id": "mm-plugin-gofile-btn",
-  "name": "Gofile Button",
-  "description": "在输入框旁边增加Gofile的链接按钮",
+  "name": "GoFile Button",
+  "description": "Add a link button for GoFile to the channel header",
   "homepage_url": "https://github.com/ecator/mm-plugin-gofile-btn",
   "support_url": "https://github.com/ecator/mm-plugin-gofile-btn/issues",
   "release_notes_url": "https://github.com/ecator/mm-plugin-gofile-btn/releases",
   "icon_path": "assets/dog.png",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "min_server_version": "5.12.0",
   "server": {
     "executables": {
@@ -33,14 +33,14 @@ const manifestStr = `
     "bundle_path": "webapp/dist/main.js"
   },
   "settings_schema": {
-    "header": "Gofile button",
+    "header": "",
     "footer": "",
     "settings": [
       {
         "key": "url",
-        "display_name": "The url of Gofile",
+        "display_name": "The url of GoFile",
         "type": "text",
-        "help_text": "The url that will be movied",
+        "help_text": "The url that will be jumped to",
         "placeholder": "http://gofile.example.com",
         "default": null
       }

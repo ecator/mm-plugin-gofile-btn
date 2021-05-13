@@ -1,12 +1,12 @@
 {
     "id": "mm-plugin-gofile-btn",
-    "name": "Gofile Button",
-    "description": "Add a link button for Gofile next to the attach file button",
+    "name": "GoFile Button",
+    "description": "Add a link button for GoFile to the channel header",
     "homepage_url": "https://github.com/ecator/mm-plugin-gofile-btn",
     "support_url": "https://github.com/ecator/mm-plugin-gofile-btn/issues",
     "release_notes_url": "https://github.com/ecator/mm-plugin-gofile-btn/releases",
     "icon_path": "assets/dog.png",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "min_server_version": "5.12.0",
     "server": {
         "executables": {
@@ -25,7 +25,7 @@
         "settings": [
             {
                 "key": "url",
-                "display_name": "The url of Gofile",
+                "display_name": "The url of GoFile",
                 "type": "text",
                 "help_text": "The url that will be jumped to",
                 "placeholder": "http://gofile.example.com"
