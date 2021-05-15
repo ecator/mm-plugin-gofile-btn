@@ -18,8 +18,8 @@ const manifestStr = `
   "homepage_url": "https://github.com/ecator/mm-plugin-gofile-btn",
   "support_url": "https://github.com/ecator/mm-plugin-gofile-btn/issues",
   "release_notes_url": "https://github.com/ecator/mm-plugin-gofile-btn/releases",
-  "icon_path": "assets/dog.png",
-  "version": "0.2.0",
+  "icon_path": "assets/dog.svg",
+  "version": "0.2.1",
   "min_server_version": "5.12.0",
   "server": {
     "executables": {
